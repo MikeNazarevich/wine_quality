@@ -7,12 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
+
 public class CVSReader {
 
-    public void CVSRead() {
+    public ArrayList<Double> CVSRead() {
         Options options = new Options();
 
-        String csvFile = ".//db/winequality-white.csv";
+        String csvFile = "db/winequality-white.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ";";
@@ -41,5 +42,6 @@ public class CVSReader {
                 }
             }
         }
+        return options.allOptionsInArray();
     }
 }

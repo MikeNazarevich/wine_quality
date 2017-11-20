@@ -89,6 +89,7 @@ public class Options {
 
         System.out.println(quartile25 + " " + quartile50 + " " + quartile75);
     }
+
     public void standard_deviation(ArrayList<Double> arr, double aver){
         double sum = 0;
         for (int i = 0; i < arr.size(); i++){
@@ -98,6 +99,7 @@ public class Options {
         sum = Math.sqrt(sum);
         //System.out.println(sum);
     }
+
     public void normalization(ArrayList<Double> arr){
         ArrayList<Double> norm = new ArrayList<>();
         norm = (ArrayList<Double>)arr.clone();
@@ -106,7 +108,8 @@ public class Options {
             arr.add(((norm.get(i) - min_value(norm)) * (1 - 0)) / (max_value(norm) - min_value(norm)));
         }
     }
-    public void normalizeAttrib(ArrayList<Double> arr) {
+
+    public void normalizeAttrib() {
         normalization(fix_acidity);
         normalization(vol_acidity);
         normalization(citr_acid);
@@ -120,8 +123,10 @@ public class Options {
         normalization(alcohol);
         normalization(quality);
     }
-    public void allOptionsInArray(){
-        for (int i = 0; i < fix_acidity.size() * 12; i++) {
+
+    public ArrayList<Double> allOptionsInArray(){
+        normalizeAttrib();
+        for (int i = 0; i < 4897; i++) {
             all_options.add(fix_acidity.get(i));
             all_options.add(vol_acidity.get(i));
             all_options.add(citr_acid.get(i));
@@ -135,5 +140,7 @@ public class Options {
             all_options.add(alcohol.get(i));
             all_options.add(quality .get(i));
         }
+        return all_options;
     }
 }
+
