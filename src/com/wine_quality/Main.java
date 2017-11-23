@@ -7,8 +7,6 @@ public class Main {
         CVSReader reader = new CVSReader();
         ArrayList<Double> arrayList = reader.CVSRead();
 
-        System.out.println("eke");
-
         for (int i = 0; i < arrayList.size(); i++) {
 
             if (i < 10) System.out.println(arrayList.get(i));
