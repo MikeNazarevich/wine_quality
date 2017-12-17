@@ -1,4 +1,4 @@
-package com.wine_quality;
+package com.wineQuality.pack;
 
 import java.util.ArrayList;
 
@@ -17,20 +17,59 @@ public class Options {
     private ArrayList<Double> quality = new ArrayList<Double>();
     private ArrayList<Double> all_options = new ArrayList<Double>();
 
+    private ArrayList<Double> mass = new ArrayList<>();
+    private ArrayList<Double> minValues = new ArrayList<>();
+    private ArrayList<Double> maxValues = new ArrayList<>();
 
-    public void addToOptions(String[] country){
-        fix_acidity.add(Double.parseDouble(country[0]));
-        vol_acidity.add(Double.parseDouble(country[1]));
-        citr_acid.add(Double.parseDouble(country[2]));
-        resid_sugar.add(Double.parseDouble(country[3]));
-        chlorides.add(Double.parseDouble(country[4]));
-        free_sulful_diox.add(Double.parseDouble(country[5]));
-        total_sulfur_diox.add(Double.parseDouble(country[6]));
-        density.add(Double.parseDouble(country[7]));
-        pH.add(Double.parseDouble(country[8]));
-        sulphates.add(Double.parseDouble(country[9]));
-        alcohol.add(Double.parseDouble(country[10]));
-        quality.add(Double.parseDouble(country[11]));
+    public void  minMaxVal() {
+        CsvWrite csvWrite = new CsvWrite();
+        addMinValues();
+        addMaxValues();
+        csvWrite.writeMinMax("minmaxVal.csv", 11, minValues, maxValues);
+    }
+
+    public void addMinValues() {
+
+        minValues.add(min_value(fix_acidity));
+        minValues.add(min_value(vol_acidity));
+        minValues.add(min_value(citr_acid));
+        minValues.add(min_value(resid_sugar));
+        minValues.add(min_value(chlorides));
+        minValues.add(min_value(free_sulful_diox));
+        minValues.add(min_value(total_sulfur_diox));
+        minValues.add(min_value(density));
+        minValues.add(min_value(pH));
+        minValues.add(min_value(sulphates));
+        minValues.add(min_value(alcohol));
+    }
+
+    public void addMaxValues() {
+        maxValues.add(max_value(fix_acidity));
+        maxValues.add(max_value(vol_acidity));
+        maxValues.add(max_value(citr_acid));
+        maxValues.add(max_value(resid_sugar));
+        maxValues.add(max_value(chlorides));
+        maxValues.add(max_value(free_sulful_diox));
+        maxValues.add(max_value(total_sulfur_diox));
+        maxValues.add(max_value(density));
+        maxValues.add(max_value(pH));
+        maxValues.add(max_value(sulphates));
+        maxValues.add(max_value(alcohol));
+    }
+
+    public void addToOptions(String[] opt){
+        fix_acidity.add(Double.parseDouble(opt[0]));
+        vol_acidity.add(Double.parseDouble(opt[1]));
+        citr_acid.add(Double.parseDouble(opt[2]));
+        resid_sugar.add(Double.parseDouble(opt[3]));
+        chlorides.add(Double.parseDouble(opt[4]));
+        free_sulful_diox.add(Double.parseDouble(opt[5]));
+        total_sulfur_diox.add(Double.parseDouble(opt[6]));
+        density.add(Double.parseDouble(opt[7]));
+        pH.add(Double.parseDouble(opt[8]));
+        sulphates.add(Double.parseDouble(opt[9]));
+        alcohol.add(Double.parseDouble(opt[10]));
+        quality.add(Double.parseDouble(opt[11]));
     }
 
     public void show(ArrayList<Double> arr){
@@ -97,15 +136,34 @@ public class Options {
         }
         sum /= arr.size();
         sum = Math.sqrt(sum);
-        //System.out.println(sum);
     }
 
-    public void normalization(ArrayList<Double> arr){
+    public void normalization(ArrayList<Double> arr) {
         ArrayList<Double> norm = new ArrayList<>();
         norm = (ArrayList<Double>)arr.clone();
         arr.clear();
         for (int i = 0; i < norm.size(); i++){
             arr.add(((norm.get(i) - min_value(norm)) * (1 - 0)) / (max_value(norm) - min_value(norm)));
+        }
+    }
+
+    public ArrayList<Double> normalizVhodn(ArrayList<Double> arr) {
+        ArrayList<Double> minmax = new ArrayList<>();
+        CVSReader cvsReader = new CVSReader();
+        minmax = cvsReader.CSVReader3("minmaxVal.csv");
+
+        for (int i = 0; i < arr.size(); i++) {
+            mass.add(i, ((arr.get(i) - minmax.get(i) * (1 - 0)) / (minmax.get(i + 11) - minmax.get(i))));
+        }
+        return mass;
+    }
+
+    public void normalizeQuality(ArrayList<Double> arr) {
+        ArrayList<Double> norm = new ArrayList<>();
+        norm = (ArrayList<Double>)arr.clone();
+        arr.clear();
+        for (int i = 0; i < norm.size(); i++) {
+            arr.add(norm.get(i) / 10);
         }
     }
 
@@ -121,12 +179,13 @@ public class Options {
         normalization(pH);
         normalization(sulphates);
         normalization(alcohol);
-        normalization(quality);
+        normalizeQuality(quality);
     }
 
     public ArrayList<Double> allOptionsInArray(){
+        minMaxVal();
         normalizeAttrib();
-        for (int i = 0; i < 4897; i++) {
+        for (int i = 0; i < 50; i++) {
             all_options.add(fix_acidity.get(i));
             all_options.add(vol_acidity.get(i));
             all_options.add(citr_acid.get(i));
@@ -143,4 +202,3 @@ public class Options {
         return all_options;
     }
 }
-
