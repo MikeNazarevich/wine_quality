@@ -10,11 +10,9 @@ import java.util.ArrayList;
 public class CVSReader {
 
     public ArrayList<Double> CVSRead(String fileName, Options options) {
-
-
         BufferedReader br = null;
         String line = "";
-        String cvsSplitBy = ",";
+        String cvsSplitBy = ";";
         int count = 0;
         try {
             br = new BufferedReader(new FileReader(fileName));
@@ -74,37 +72,5 @@ public class CVSReader {
         return mass;
     }
 
-    public ArrayList<Double> CSVReader3(String fileName) {
-        BufferedReader br = null;
-        String line = "";
-        String cvsSplitBy = ",";
-        int count = 0;
-
-        ArrayList<Double> minmax = new ArrayList<>();
-
-        try {
-            br = new BufferedReader(new FileReader(fileName));
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(cvsSplitBy);
-
-                for (int i = 0; i < values.length; i++)
-                    minmax.add(Double.parseDouble(values[i]));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return minmax;
-
-    }
 
 }

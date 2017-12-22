@@ -150,10 +150,10 @@ public class Options {
     public ArrayList<Double> normalizVhodn(ArrayList<Double> arr) {
         ArrayList<Double> minmax = new ArrayList<>();
         CVSReader cvsReader = new CVSReader();
-        minmax = cvsReader.CSVReader3("minmaxVal.csv");
+        minmax = cvsReader.CSVReader2("minmaxVal.csv");
 
         for (int i = 0; i < arr.size(); i++) {
-            mass.add(i, ((arr.get(i) - minmax.get(i) * (1 - 0)) / (minmax.get(i + 11) - minmax.get(i))));
+            mass.add(i, ((arr.get(i) - minmax.get(i)) / (minmax.get(i + 11) - minmax.get(i))));
         }
         return mass;
     }
@@ -185,7 +185,7 @@ public class Options {
     public ArrayList<Double> allOptionsInArray(){
         minMaxVal();
         normalizeAttrib();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 300; i++) {
             all_options.add(fix_acidity.get(i));
             all_options.add(vol_acidity.get(i));
             all_options.add(citr_acid.get(i));

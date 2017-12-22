@@ -129,8 +129,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(residualSugarLabel, gridBagConstraints);
 
-        fixedAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(7.0d, 3.8d, 14.2d, 0.1d));
-        fixedAciditySpinner.setToolTipText("Min: 3.8 - Max: 14.2");
+        fixedAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(7.0d, 4.6d, 15.9d, 0.1d));
+        fixedAciditySpinner.setToolTipText("Min: 4.6 - Max: 15.9");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -141,8 +141,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 5);
         inputPanel.add(fixedAciditySpinner, gridBagConstraints);
 
-        volatileAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.27d, 0.08d, 1.1d, 0.001d));
-        volatileAciditySpinner.setToolTipText("Min: 0.08 - Max: 1.1");
+        volatileAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.27d, 0.12d, 1.58d, 0.001d));
+        volatileAciditySpinner.setToolTipText("Min: 0.12 - Max: 1.58");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 1;
@@ -153,8 +153,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 5);
         inputPanel.add(volatileAciditySpinner, gridBagConstraints);
 
-        citricAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.36d, 0.0d, 1.66d, 0.01d));
-        citricAciditySpinner.setToolTipText("Min: 0 - Max: 1.66");
+        citricAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.36d, 0.0d, 1.00d, 0.01d));
+        citricAciditySpinner.setToolTipText("Min: 0 - Max: 1.00");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 1;
@@ -165,8 +165,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 5);
         inputPanel.add(citricAciditySpinner, gridBagConstraints);
 
-        residualSugarSpinner.setModel(new javax.swing.SpinnerNumberModel(20.7d, 0.6d, 65.8d, 0.01d));
-        residualSugarSpinner.setToolTipText("Min: 0.6 - Max: 65.8");
+        residualSugarSpinner.setModel(new javax.swing.SpinnerNumberModel(14.3d, 0.9d, 15.5d, 0.01d));
+        residualSugarSpinner.setToolTipText("Min: 0.9 - Max: 15.5");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 4;
@@ -184,8 +184,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(chloridesLabel, gridBagConstraints);
 
-        chloridesSpinner.setModel(new javax.swing.SpinnerNumberModel(0.045d, 0.009d, 0.346d, 0.001d));
-        chloridesSpinner.setToolTipText("Min: 0.009 - Max: 0.346");
+        chloridesSpinner.setModel(new javax.swing.SpinnerNumberModel(0.045d, 0.012d, 0.611d, 0.001d));
+        chloridesSpinner.setToolTipText("Min: 0.012 - Max: 0.611");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 3;
@@ -204,8 +204,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(freeSulfurDioxideLabel, gridBagConstraints);
 
-        freeSulfurDioxideSpinner.setModel(new javax.swing.SpinnerNumberModel(45.0d, 2.0d, 289.0d, 1.0d));
-        freeSulfurDioxideSpinner.setToolTipText("Min: 2 - Max: 289");
+        freeSulfurDioxideSpinner.setModel(new javax.swing.SpinnerNumberModel(45.0d, 1.0d, 72.0d, 1.0d));
+        freeSulfurDioxideSpinner.setToolTipText("Min: 1 - Max: 72");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 3;
@@ -223,8 +223,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(totalSulfurDioxideLabel, gridBagConstraints);
 
-        totalSulfurDioxideSpinner.setModel(new javax.swing.SpinnerNumberModel(170.0d, 9.0d, 440.0d, 0.5d));
-        totalSulfurDioxideSpinner.setToolTipText("Min: 9 - Max: 440");
+        totalSulfurDioxideSpinner.setModel(new javax.swing.SpinnerNumberModel(170.0d, 6.0d, 289.0d, 0.5d));
+        totalSulfurDioxideSpinner.setToolTipText("Min: 6 - Max: 289");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 4;
@@ -242,8 +242,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(densityLabel, gridBagConstraints);
 
-        densitySpinner.setModel(new javax.swing.SpinnerNumberModel(1.001d, 0.98711d, 1.0389d, 0.001d));
-        densitySpinner.setToolTipText("Min: 0.98711 - Max: 1.0389");
+        densitySpinner.setModel(new javax.swing.SpinnerNumberModel(1.000001d, 0.99671d, 1.00369d, 0.0001d));
+        densitySpinner.setToolTipText("Min: 0.99671 - Max: 1.0369");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 5;
@@ -261,8 +261,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(sulphatesLabel, gridBagConstraints);
 
-        phSpinner.setModel(new javax.swing.SpinnerNumberModel(3.0d, 2.72d, 3.82d, 0.01d));
-        phSpinner.setToolTipText("Min: 2.72 - Max: 3.82");
+        phSpinner.setModel(new javax.swing.SpinnerNumberModel(3.0d, 2.74d, 4.01d, 0.01d));
+        phSpinner.setToolTipText("Min: 2.74 - Max: 4.01");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 5;
@@ -281,8 +281,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(phLabel, gridBagConstraints);
 
-        sulphatesSpinner.setModel(new javax.swing.SpinnerNumberModel(0.45d, 0.22d, 1.08d, 0.01d));
-        sulphatesSpinner.setToolTipText("Min: 0.22 - Max: 1.08");
+        sulphatesSpinner.setModel(new javax.swing.SpinnerNumberModel(0.45d, 0.33d, 2.0d, 0.01d));
+        sulphatesSpinner.setToolTipText("Min: 0.33 - Max: 2.0");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -301,8 +301,8 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(alcoholLabel, gridBagConstraints);
 
-        alcoholSpinner.setModel(new javax.swing.SpinnerNumberModel(8.8d, 8.0d, 14.2d, 0.01d));
-        alcoholSpinner.setToolTipText("Min: 8 - Max: 14.2");
+        alcoholSpinner.setModel(new javax.swing.SpinnerNumberModel(8.8d, 8.4d, 14.9d, 0.01d));
+        alcoholSpinner.setToolTipText("Min: 8.4 - Max: 14.9");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 7;
@@ -372,8 +372,12 @@ public class MainWindow extends JFrame
             arrayList = btnProcessActionPerformed();
 
             NeuralNetwork neuralNetwork  = new NeuralNetwork();
+
+
             double mark;
+            int kek;
             mark = neuralNetwork.forButton(arrayList);
+            mark = Math.round(mark);
 
             JOptionPane.showConfirmDialog(null,
                     mark,
