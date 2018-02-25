@@ -11,9 +11,6 @@ import java.util.Random;
 
 public class NeuralNetwork {
 
-
-
-
     private double alfa;
     private int inputLayer;
     private int hiddenLayer;
